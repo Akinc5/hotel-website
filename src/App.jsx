@@ -27,7 +27,7 @@ function ComingSoonOverlay({ visible }) {
       duration: 3 + Math.random() * 4,
       delay: Math.random() * 3,
     })),
-  []);
+    []);
 
   const handleNotify = async (e) => {
     e.preventDefault();
@@ -127,7 +127,7 @@ function ComingSoonOverlay({ visible }) {
               className="text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] mb-6"
               style={{ color: '#d4af37' }}
             >
-              S NIMAI Sanctuaries
+              S NIMAI RESORTS & SPA
             </span>
 
             <h1

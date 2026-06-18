@@ -99,7 +99,7 @@ export default function BookingModal({ isOpen, onClose, initialSearchState, init
 
     setIsLoading(true);
     setLoadingMessage('Securing your sanctuary reservation...');
-    
+
     const API_URL = import.meta.env.VITE_API_URL || '';
 
     try {
@@ -301,7 +301,7 @@ export default function BookingModal({ isOpen, onClose, initialSearchState, init
             })}
             <div className="relative z-10 flex flex-col items-center text-center max-w-lg mx-auto">
               <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.9, delay: 0.3 }} className="w-14 h-px mb-7" style={{ background: 'linear-gradient(90deg, transparent, #d4af37, transparent)' }} />
-              <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.4em] mb-5" style={{ color: '#d4af37' }}>S NIMAI Sanctuaries</span>
+              <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.4em] mb-5" style={{ color: '#d4af37' }}>S NIMAI RESORTS & SPA</span>
               <h2 className="font-serif font-bold leading-[1.05] mb-5" style={{ fontSize: 'clamp(2.8rem, 8vw, 5rem)', color: '#f5f0e8' }}>
                 Online Booking<br /><span style={{ color: '#d4af37' }}>Coming Soon</span>
               </h2>
