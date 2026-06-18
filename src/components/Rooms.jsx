@@ -93,7 +93,7 @@ export default function Rooms({ onExplore }) {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs md:text-sm font-semibold uppercase tracking-[0.25em] text-brand-gold mb-3 block">
-            Our Sanctuaries
+            Our RESORTS & SPA
           </span>
           <h2 className="font-serif text-3xl md:text-5xl font-semibold leading-tight text-brand-charcoal">
             I want to escape to...
