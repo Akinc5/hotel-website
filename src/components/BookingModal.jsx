@@ -99,6 +99,8 @@ export default function BookingModal({ isOpen, onClose, initialSearchState, init
 
     setIsLoading(true);
     setLoadingMessage('Securing your sanctuary reservation...');
+    
+    const API_URL = import.meta.env.VITE_API_URL || '';
 
     try {
       // 1. Create booking in backend
@@ -121,7 +123,7 @@ export default function BookingModal({ isOpen, onClose, initialSearchState, init
         total_amount: finalTotal
       };
 
-      const bookingRes = await fetch('/api/bookings/create', {
+      const bookingRes = await fetch(`${API_URL}/api/bookings/create`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(bookingData)
@@ -145,7 +147,7 @@ export default function BookingModal({ isOpen, onClose, initialSearchState, init
         }
 
         // Create Order
-        const orderRes = await fetch('/api/payments/razorpay/create-order', {
+        const orderRes = await fetch(`${API_URL}/api/payments/razorpay/create-order`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ bookingId })
@@ -170,7 +172,7 @@ export default function BookingModal({ isOpen, onClose, initialSearchState, init
             setIsLoading(true);
             setLoadingMessage('Verifying payment details with bank...');
             try {
-              const verifyRes = await fetch('/api/payments/razorpay/verify', {
+              const verifyRes = await fetch(`${API_URL}/api/payments/razorpay/verify`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -215,7 +217,7 @@ export default function BookingModal({ isOpen, onClose, initialSearchState, init
         // Stripe gateway
         setLoadingMessage('Preparing international Stripe checkout...');
 
-        const sessionRes = await fetch('/api/payments/stripe/create-session', {
+        const sessionRes = await fetch(`${API_URL}/api/payments/stripe/create-session`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ bookingId })

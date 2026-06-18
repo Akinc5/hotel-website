@@ -34,7 +34,8 @@ function ComingSoonOverlay({ visible }) {
     if (!email) return;
 
     try {
-      const res = await fetch('/api/waitlist', {
+      const API_URL = import.meta.env.VITE_API_URL || '';
+      const res = await fetch(`${API_URL}/api/waitlist`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -235,7 +236,8 @@ export default function App() {
       setIsBookingOpen(true);
       const verifyStripeSession = async () => {
         try {
-          const res = await fetch('/api/payments/stripe/verify-session', {
+          const API_URL = import.meta.env.VITE_API_URL || '';
+          const res = await fetch(`${API_URL}/api/payments/stripe/verify-session`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ sessionId, bookingId })
