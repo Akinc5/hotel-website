@@ -313,7 +313,6 @@ export default function BookingModal({ isOpen, onClose, initialSearchState, init
             </div>
           </motion.div>
           {/* ══════════════════ END COMING SOON — LINE 374 ══════════════════ */}
-
           {bookingStep === 1 ? (
             /* STEP 1: Booking Form */
             <div className="flex flex-col lg:flex-row overflow-y-auto max-h-full divide-y lg:divide-y-0 lg:divide-x divide-stone-200">
