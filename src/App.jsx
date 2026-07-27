@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnnouncementBar from './components/AnnouncementBar';
 import Navbar from './components/Navbar';
+import Hero from './components/Hero';
 import Welcome from './components/Welcome';
 import Rooms from './components/Rooms';
 import Brands from './components/Attractions';
